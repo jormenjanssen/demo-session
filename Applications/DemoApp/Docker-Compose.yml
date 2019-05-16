@@ -1,0 +1,12 @@
+version: '3.3'
+services:
+  server:
+    build: ../../Dockerfiles/Netcore-demo-server/
+    environment: 
+      - PORT=9006
+    ports:
+      - 9006:9006
+  client:
+    build: ../../Dockerfiles/Netcore-demo-client/
+    environment: 
+      - ENDPOINT=server:9006
